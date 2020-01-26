@@ -8,4 +8,6 @@ When creating or editing a Classroom or Assignment in [GitHub Classrooms](https:
 
 Given an invalid name or prefix, you will see a suggestion on how to correct the error. The submit button will be disabled until you correct it.
 
-![Assignments screenshot](https://raw.githubusercontent.com/howest-gp/howest-user-scripts/master/classroom-conventions/screenshot-1.png "Assignment prefix validation")
+![Classrooms screenshot](https://raw.githubusercontent.com/howest-gp/howest-user-scripts/master/classroom-conventions/screenshot-1.png "Classroom name validation")
+
+![Assignments screenshot](https://raw.githubusercontent.com/howest-gp/howest-user-scripts/master/classroom-conventions/screenshot-2.png "Assignment prefix validation")
