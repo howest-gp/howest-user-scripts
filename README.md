@@ -1,4 +1,4 @@
-# Howest PROG User Scripts
+# Howest PROG user scripts
 
 A collection of tampermonkey user scripts for Howest PROG.
 
@@ -8,7 +8,7 @@ A collection of tampermonkey user scripts for Howest PROG.
 2. Choose a user script from the list below
 3. Install the script into Tampermonkey
 
-Left enabled, the script will do it's magic once you are visit the relevant page in your browser.
+When enabled, the user script will activate you visit the relevant URL(s) in your browser.
 
 ## User scripts
 

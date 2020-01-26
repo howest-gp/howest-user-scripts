@@ -1,13 +1,13 @@
 // ==UserScript==
 // @name         Howest PROG Classroom Conventions
-// @version      1.0
-// @description  A userscript to validate Howest PROG conventions in GitHub Classrooms
+// @version      1.0.1
+// @description  A user script to validate Howest PROG conventions in GitHub Classrooms
 // @namespace    http://howest.be/
 // @author       sigged
 // @run-at       document-idle
 // @match        https://classroom.github.com/classrooms/*
 // @grant        none
-// @icon         https://raw.githubusercontent.com/howest-gp/howest-user-scripts/master/howest-prog.svg
+// @icon         https://raw.githubusercontent.com/howest-gp/howest-user-scripts/master/howest-prog-64.png
 // @downloadURL  https://raw.githubusercontent.com/howest-gp/howest-user-scripts/master/classroom-conventions/howest-prog-classroom-conventions.user.js
 // @updateURL    https://raw.githubusercontent.com/howest-gp/howest-user-scripts/master/classroom-conventions/howest-prog-classroom-conventions.user.js
 // ==/UserScript==
