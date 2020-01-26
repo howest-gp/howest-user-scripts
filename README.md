@@ -14,7 +14,7 @@ When enabled, the user script will activate you visit the relevant URL(s) in you
 
 This collection currently consists of the following user scripts:
 
-+ [Howest Prog Classroom Conventions](https://github.com/howest-gp/howest-user-scripts/tree/master/classroom-conventions) - Validates your classroom names and assignment prefixes in GitHub Classrooms. ( [readme](https://github.com/howest-gp/howest-user-scripts/blob/master/classroom-conventions/README.md) | [install/update](https://raw.githubusercontent.com/howest-gp/howest-user-scripts/master/classroom-conventions/howest-prog-classroom-conventions.user.js) )
++ [**Classroom Conventions**](https://github.com/howest-gp/howest-user-scripts/tree/master/classroom-conventions) ([readme](https://github.com/howest-gp/howest-user-scripts/blob/master/classroom-conventions/README.md)&nbsp;|&nbsp;[install/update](https://raw.githubusercontent.com/howest-gp/howest-user-scripts/master/classroom-conventions/howest-prog-classroom-conventions.user.js)) - Validates your classroom names and assignment prefixes in GitHub Classrooms.
 
 
 ## Contribute
