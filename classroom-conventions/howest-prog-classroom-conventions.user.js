@@ -5,7 +5,7 @@
 // @namespace    http://howest.be/
 // @author       sigged
 // @run-at       document-idle
-// @match        https://classroom.github.com/classrooms/*
+// @match        https://classroom.github.com/*
 // @grant        none
 // @icon         https://raw.githubusercontent.com/howest-gp/howest-user-scripts/master/howest-prog-64.png
 // @downloadURL  https://raw.githubusercontent.com/howest-gp/howest-user-scripts/master/classroom-conventions/howest-prog-classroom-conventions.user.js
@@ -24,6 +24,13 @@
                 /^http(s?):\/\/classroom.github.com\/classrooms\/[^\s\/]+\/(group-)?assignments/g
             ],
             initialize: initAssignmentPageValidation
+        },
+        {
+            name: 'Classroom',
+            matchUrls: [
+                /^http(s?):\/\/classroom.github.com\/classrooms\/[^\s\/]+((\/setup(_organization)?$|\/settings$)|$)/g
+            ],
+            initialize: initClassroomPageValidation
         }
     ];
 
@@ -32,7 +39,7 @@
             pattern: /^(st-)(\d{4}-\d-)?(\w+-)?(\w+)?/g
         },
         classroom: {
-            pattern: /^(st-)(\d{4}-\d-)?(\w+-)?(\w+)?/g
+            pattern: /^(\d{4}-\d-)([^\s\/-]+-)?([^\s\/-]+)?/g
         }
     };
 
@@ -61,6 +68,7 @@
                 if(isBusy) return;
                 if(window.location.href != lastHref)
                 {
+                    //console.log(`determining new page`, window.location.href);
                     let currentPage = determinePage();
                     if(currentPage)
                     {
@@ -75,6 +83,63 @@
                 isBusy = false;
             }
         }, 500);
+    }
+
+    
+    function initClassroomPageValidation(){
+        try
+        {
+            const classroom_title = document.querySelector("input[type=text]#organization_title");
+            if(!(classroom_title)) return;
+            const classroom_submit = classroom_title.form.querySelector("input[type=submit]");
+
+            classroom_title.setAttribute("autocomplete","off");
+            classroom_title.style.maxHeight = "28px";
+            if(classroom_submit) classroom_submit.style.maxHeight = "28px";
+
+            validation(classroom_title.value);
+            classroom_title.addEventListener('change', event => {
+                validation(classroom_title.value);
+            });
+            classroom_title.addEventListener('input', event => {
+                validation(classroom_title.value);
+            });
+
+            function validation(classroomName)
+            {
+                const error = validateClassroomName(classroomName);
+                renderError(error, classroom_title, classroom_submit);
+            }
+        }
+        catch(e)
+        {
+            console.error(e);
+        }
+    }
+
+    function validateClassroomName(classroomName){
+        let error = null;
+        const result = rules.classroom.pattern.exec(classroomName);
+        rules.classroom.pattern.lastIndex = 0;
+
+        if(result && result["1"]){
+            if(!result["2"])
+            {
+                error = `Klasgroep ontbreekt. vb: <code style="font-size:1.1em;">${result["1"]}<b><u>S1G1</u></b>-pe01</code>`;
+            }
+            else if(!result["3"])
+            {
+                error = `Opdracht ID ontbreekt. vb: <code style="font-size:1.1em;">${result["1"]}${result["2"]}<b><u>pe01</u></b></code>`;
+            }
+            else if(classroomName.endsWith("-"))
+            {
+                error = `De naam kan niet eindigen met een <code style="font-size:1.1em;"><b>-</b></code>`;
+            }
+        }else{
+            error = `De naam moet beginnen met academiejaar en jaarhelft.<br />vb: <code style="font-size:1.1em;"><b><u>1920-1-</u></b>S1G1-pe01</code>`;
+        }
+
+        return error;
     }
 
     function validateAssignmentPrefix(assignmentPrefix){
@@ -109,7 +174,6 @@
     function initAssignmentPageValidation(){
         try
         {
-            let assignment_slug_tm_validation = document.querySelector("div#assignment_slug_tm_validation");
             const assignment_title = document.querySelector("input#assignment_title") || document.querySelector("input#group_assignment_title");
             const assignment_slug = document.querySelector("input#assignment_slug") || document.querySelector("input#group_assignment_slug");
 
@@ -151,7 +215,8 @@
 
         if(errorMessage)
         {
-            errorElement.style="border-color:#f00;color:#f00;";
+            errorElement.borderColor = "#f00";
+            errorElement.color = "#f00";
             if(elementToDisable){
                 elementToDisable.setAttribute("disabled","disabled");
             }
@@ -161,11 +226,12 @@
                 validationMessageElement.setAttribute("style", validationMessageElementStyle);
                 errorElement.parentNode.appendChild(validationMessageElement);
             }
-            validationMessageElement.innerHTML = "&#9888;&nbsp;" + errorMessage;
+            validationMessageElement.innerHTML = `<div style="float:left;padding:0 10px 2em 0">&#9888;</div><span>${errorMessage}</span><div style="clear:both"></div>`;
         }
         else
         {
-            errorElement.style="border-color:#007b00;color:#007b00;";
+            errorElement.borderColor = "#007b00";
+            errorElement.color = "#007b00";
             if(elementToDisable){
                 elementToDisable.removeAttribute("disabled");
             }
