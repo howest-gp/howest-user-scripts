@@ -85,7 +85,7 @@
         }, 500);
     }
 
-    
+
     function initClassroomPageValidation(){
         try
         {
@@ -136,7 +136,7 @@
                 error = `De naam kan niet eindigen met een <code style="font-size:1.1em;"><b>-</b></code>`;
             }
         }else{
-            error = `De naam moet beginnen met academiejaar en jaarhelft.<br />vb: <code style="font-size:1.1em;"><b><u>1920-1-</u></b>S1G1-pe01</code>`;
+            error = `De naam moet beginnen met academiejaar en jaarhelft.<br />vb: <code style="font-size:1.1em;"><b><u>${getSuggestedYearPrefix()}-</u></b>S1G1-pe01</code>`;
         }
 
         return error;
@@ -150,7 +150,7 @@
         if(result && result["1"]){
             if(!result["2"])
             {
-                error = `Academiejaar en jaarhelft ontbreken. vb: <code style="font-size:1.1em;">st-<b><u>1920-1-</u></b>S1G1-pe01</code>`;
+                error = `Academiejaar en jaarhelft ontbreken. vb: <code style="font-size:1.1em;">st-<b><u>${getSuggestedYearPrefix()}-</u></b>S1G1-pe01</code>`;
             }
             else if(!result["3"])
             {
@@ -238,6 +238,24 @@
             if(validationMessageElement) {
                 validationMessageElement.parentNode.removeChild(validationMessageElement);
             }
+        }
+    }
+
+    function getSuggestedYearPrefix(){
+        const now = new Date();
+        const jh1Start = new Date(now.getFullYear(), 9-1, 1); //1 sept
+        const jh2Start = new Date(now.getFullYear()+1, 1-1, 1); //1 jan
+        if(now < jh1Start){
+            //ensure limits are current
+            jh1Start.setFullYear(jh1Start.getFullYear() - 1);
+            jh2Start.setFullYear(jh2Start.getFullYear() - 1);
+        }
+
+        let result = `${jh1Start.getFullYear().toString().substr(-2)}${jh2Start.getFullYear().toString().substr(-2)}`;
+        if(now < jh2Start){
+            return `${result}-1`;
+        }else{
+            return `${result}-2`;
         }
     }
 
