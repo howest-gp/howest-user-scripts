@@ -11,3 +11,5 @@ Given an invalid name or prefix, you will see a suggestion on how to correct the
 ![Classrooms screenshot](https://raw.githubusercontent.com/howest-gp/howest-user-scripts/master/classroom-conventions/screenshot-1.png "Classroom name validation")
 
 ![Assignments screenshot](https://raw.githubusercontent.com/howest-gp/howest-user-scripts/master/classroom-conventions/screenshot-2.png "Assignment prefix validation")
+
+![Workflow](https://raw.githubusercontent.com/howest-gp/howest-user-scripts/master/classroom-conventions/workflow.gif "Workflow")
