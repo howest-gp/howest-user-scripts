@@ -8,7 +8,7 @@ A collection of tampermonkey user scripts for Howest PROG.
 2. Choose a user script from the list below
 3. Install the script into Tampermonkey
 
-When enabled, the user script will activate you visit the relevant URL(s) in your browser.
+When enabled, the user script will activate when you visit the relevant URL(s) in your browser.
 
 ## User scripts
 
