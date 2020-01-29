@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Howest PROG Classroom Conventions
-// @version      1.0.2
+// @version      1.0.3
 // @description  A user script to validate Howest PROG conventions in GitHub Classrooms
 // @namespace    http://howest.be/
 // @author       sigged
@@ -129,7 +129,7 @@
             }
             else if(!result["3"])
             {
-                error = `Opdracht ID ontbreekt. vb: <code style="font-size:1.1em;">${result["1"]}${result["2"]}<b><u>pe01</u></b></code>`;
+                error = `Modulecode ontbreekt. vb: <code style="font-size:1.1em;">${result["1"]}${result["2"]}<b><u>prb</u></b></code>`;
             }
             else if(classroomName.endsWith("-"))
             {
