@@ -125,7 +125,7 @@
         if(result && result["1"]){
             if(!result["2"])
             {
-                error = `Klasgroep ontbreekt. vb: <code style="font-size:1.1em;">${result["1"]}<b><u>S1G1</u></b>-pe01</code>`;
+                error = `Klasgroep ontbreekt. vb: <code style="font-size:1.1em;">${result["1"]}<b><u>S1G1</u></b>-prb</code>`;
             }
             else if(!result["3"])
             {
@@ -136,7 +136,7 @@
                 error = `De naam kan niet eindigen met een <code style="font-size:1.1em;"><b>-</b></code>`;
             }
         }else{
-            error = `De naam moet beginnen met academiejaar en jaarhelft.<br />vb: <code style="font-size:1.1em;"><b><u>${getSuggestedYearPrefix()}-</u></b>S1G1-pe01</code>`;
+            error = `De naam moet beginnen met academiejaar en jaarhelft.<br />vb: <code style="font-size:1.1em;"><b><u>${getSuggestedYearPrefix()}-</u></b>S1G1-prb</code>`;
         }
 
         return error;
