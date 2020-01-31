@@ -76,6 +76,7 @@
                         currentPage.initialize();
                     }
                     lastHref = window.location.href;
+                    fixGoogleLayoutIssue();
                 }
             }
             finally
@@ -257,6 +258,12 @@
         }else{
             return `${result}-2`;
         }
+    }
+
+    //Fix for new layout F****ng GitHub Classrooms up in Chrome
+    function fixGoogleLayoutIssue(){        
+        var pencilLover = document.querySelector("#slug-field");
+        pencilLover.style.display = "";
     }
 
     init();
