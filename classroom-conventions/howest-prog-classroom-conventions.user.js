@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Howest PROG Classroom Conventions
-// @version      1.0.3
+// @version      1.0.4
 // @description  A user script to validate Howest PROG conventions in GitHub Classrooms
 // @namespace    http://howest.be/
 // @author       sigged
@@ -76,6 +76,7 @@
                         currentPage.initialize();
                     }
                     lastHref = window.location.href;
+                    fixGoogleLayoutIssue();
                 }
             }
             finally
@@ -257,6 +258,12 @@
         }else{
             return `${result}-2`;
         }
+    }
+
+    //Fix for new layout F****ng GitHub Classrooms up in Chrome
+    function fixGoogleLayoutIssue(){        
+        var pencilLover = document.querySelector("#slug-field");
+        pencilLover.style.display = "";
     }
 
     init();
