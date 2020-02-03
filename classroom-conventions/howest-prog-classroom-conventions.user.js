@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Howest PROG Classroom Conventions
-// @version      1.0.3
+// @version      1.0.4
 // @description  A user script to validate Howest PROG conventions in GitHub Classrooms
 // @namespace    http://howest.be/
 // @author       sigged
