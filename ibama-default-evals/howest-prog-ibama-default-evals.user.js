@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Howest PROG iBamaflex Evaluation Defaults
-// @version      1.0.1
+// @version      1.0.2
 // @description  Adds default GRAD PROG Evaluations
 // @namespace    http://howest.be/
 // @author       sigged
@@ -74,7 +74,7 @@
     let evalGroups = {
         "Geen (GEEN)" : '{"logEntries":[],"value":"1","text":"Geen (GEEN)","enabled":true,"checkedIndices":[],"checkedItemsTextOverflows":false}',
         "SEM 1 academiejaar (SEM 1)" : '{"logEntries":[],"value":"10","text":"SEM 1 academiejaar (SEM 1)","enabled":true,"checkedIndices":[],"checkedItemsTextOverflows":false}',
-        "SEM 2 academiejaar (SEM 2)" : '{"logEntries":[],"value":"10","text":"SEM 2 academiejaar (SEM 2)","enabled":true,"checkedIndices":[],"checkedItemsTextOverflows":false}'
+        "SEM 2 academiejaar (SEM 2)" : '{"logEntries":[],"value":"11","text":"SEM 2 academiejaar (SEM 2)","enabled":true,"checkedIndices":[],"checkedItemsTextOverflows":false}'
     }
 
     let examChances = {
