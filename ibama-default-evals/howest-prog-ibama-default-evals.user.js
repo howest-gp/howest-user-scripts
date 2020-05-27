@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Howest PROG iBamaflex Evaluation Defaults
-// @version      1.0.2
+// @version      1.0.3
 // @description  Adds default GRAD PROG Evaluations
 // @namespace    http://howest.be/
 // @author       sigged
@@ -20,6 +20,10 @@
     function init() {
 
         form = document.querySelector('form');
+
+        let title = document.createElement("h5");
+        title.innerHTML = "<b>Grad PROG Defaults:</b>";
+        document.body.appendChild(title);
 
         for(let i = 0; i < recipes.length; i++)
         {
@@ -127,7 +131,7 @@
             "name" : "SEM 2: EX 1e zit",
             "evalGroup" : "SEM 2 academiejaar (SEM 2)",
             "examChance" : "Eerste Examenkans",
-            "evalMoment" : "Examenperiode 1 (1e sem)",
+            "evalMoment" : "Examenperiode 2 (2e sem)",
             "evalFormat" : "Examen (combi)",
             "percent" : "50"
         },
@@ -135,7 +139,7 @@
             "name" : "SEM 2: PE 1e zit",
             "evalGroup" : "SEM 2 academiejaar (SEM 2)",
             "examChance" : "Eerste Examenkans",
-            "evalMoment" : "Examenperiode 1 buiten examenrooster (1_bis)",
+            "evalMoment" : "Examenperiode 2 buiten examenrooster (2_bis)",
             "evalFormat" : "Perm Evaluatie (combi)",
             "percent" : "50"
         },
