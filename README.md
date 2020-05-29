@@ -14,8 +14,8 @@ When enabled, the user script will activate when you visit the relevant URL(s) i
 
 This collection currently consists of the following user scripts:
 
-+ [**Classroom Conventions**](https://github.com/howest-gp/howest-user-scripts/tree/master/classroom-conventions) ([readme](https://github.com/howest-gp/howest-user-scripts/blob/master/classroom-conventions/README.md)&nbsp;|&nbsp;[install/update](https://raw.githubusercontent.com/howest-gp/howest-user-scripts/master/classroom-conventions/howest-prog-classroom-conventions.user.js)) - Validates your classroom names and assignment prefixes in GitHub Classrooms.
-
++ [**Classroom Conventions**](https://github.com/howest-gp/howest-user-scripts/tree/master/classroom-conventions) ([readme](https://github.com/howest-gp/howest-user-scripts/blob/master/classroom-conventions/README.md)&nbsp;|&nbsp;[install/update](https://github.com/howest-gp/howest-user-scripts/raw/master/classroom-conventions/howest-prog-classroom-conventions.user.js)) - Validates your classroom names and assignment prefixes in GitHub Classrooms.
++ [**iBaMaFlex Evaluation Defaults**](https://github.com/howest-gp/howest-user-scripts/tree/master/ibama-default-evals) ([readme](https://github.com/howest-gp/howest-user-scripts/blob/master/ibama-default-evals/README.md)&nbsp;|&nbsp;[install/update](https://github.com/howest-gp/howest-user-scripts/raw/master/ibama-default-evals/howest-prog-ibama-default-evals.user.js)) - Avoid a whole lot of clicks and mistakes when defining evaluations in iBaMaFlex.
 
 ## Contribute
 
