@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Howest PROG Classroom Conventions
-// @version      1.0.4
+// @version      1.1.0
 // @description  A user script to validate Howest PROG conventions in GitHub Classrooms
 // @namespace    http://howest.be/
 // @author       sigged
@@ -21,7 +21,7 @@
         {
             name: 'Assignment',
             matchUrls: [
-                /^http(s?):\/\/classroom.github.com\/classrooms\/[^\s\/]+\/(group-)?assignments/g
+                /^http(s?):\/\/classroom.github.com\/classrooms\/[^\s\/]+\/new_assignments/g
             ],
             initialize: initAssignmentPageValidation
         },
@@ -76,7 +76,7 @@
                         currentPage.initialize();
                     }
                     lastHref = window.location.href;
-                    fixGoogleLayoutIssue();
+                    ensureSlugFieldVisible();
                 }
             }
             finally
@@ -260,10 +260,12 @@
         }
     }
 
-    //Fix for new layout F****ng GitHub Classrooms up in Chrome
-    function fixGoogleLayoutIssue(){        
-        var pencilLover = document.querySelector("#slug-field");
-        pencilLover.style.display = "";
+    //ensure custom slug field is always visible
+    function ensureSlugFieldVisible(){
+        var slugField = document.querySelector("#slug-field");
+        if(slugField){
+            slugField.style.display = "";
+        }
     }
 
     init();
